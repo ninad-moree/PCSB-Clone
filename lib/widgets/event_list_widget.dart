@@ -18,8 +18,22 @@ class EventListWidget extends StatelessWidget {
               final event = selectedEvents[index];
               return Card(
                 child: ListTile(
-                  title: Text(event.title),
-                  subtitle: Text(event.description),
+                  title: Text(
+                    event.title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  contentPadding: const EdgeInsets.all(10),
+                  minVerticalPadding: 8,
+                  subtitle: Text(
+                    event.description,
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               );
             },

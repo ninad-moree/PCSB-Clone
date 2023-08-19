@@ -45,9 +45,27 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
               child: TextField(
                 autofocus: true,
                 controller: _eventTitleController,
+                cursorColor: Colors.white,
                 decoration: const InputDecoration(
                   labelText: 'Event Title',
-                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(
+                    color: Colors.white,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.teal,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.teal,
+                    ),
+                  ),
+                  // border: OutlineInputBorder(
+                  //   borderSide: BorderSide(
+                  //     color: Colors.teal,
+                  //   ),
+                  // ),
                 ),
               ),
             ),
@@ -56,9 +74,23 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
               controller: _eventDescriptionController,
               minLines: 3,
               maxLines: 5,
+              cursorColor: Colors.white,
               decoration: const InputDecoration(
                 labelText: 'Event Description',
-                border: OutlineInputBorder(),
+                labelStyle: TextStyle(
+                  color: Colors.white,
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.teal,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.teal,
+                  ),
+                ),
+                // border: OutlineInputBorder(),
               ),
             ),
             Row(
@@ -66,9 +98,17 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
               children: [
                 TextButton(
                   onPressed: () => Navigator.pop(context),
-                  child: const Text('Cancel'),
+                  child: const Text(
+                    'Cancel',
+                    style: TextStyle(
+                      color: Colors.teal,
+                    ),
+                  ),
                 ),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.teal,
+                  ),
                   onPressed: () {
                     final eventTitle = _eventTitleController.text;
                     final eventDescription = _eventDescriptionController.text;

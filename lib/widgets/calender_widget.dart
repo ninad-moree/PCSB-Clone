@@ -55,7 +55,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                           height: 6,
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.blue,
+                            color: Colors.yellow,
                           ),
                         ),
                       );
@@ -66,29 +66,29 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 headerStyle: const HeaderStyle(
                   //name of the month
                   titleTextStyle: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
                   ),
                   formatButtonVisible: false,
                   leftChevronIcon: Icon(
                     Icons.chevron_left,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                   rightChevronIcon: Icon(
                     Icons.chevron_right,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                 ),
                 daysOfWeekStyle: const DaysOfWeekStyle(
                   //mon-tue-...
                   weekdayStyle: TextStyle(
                     fontSize: 20,
-                    color: Colors.black,
+                    color: Colors.tealAccent,
                   ),
                   weekendStyle: TextStyle(
                     fontSize: 20,
-                    color: Colors.black,
+                    color: Colors.tealAccent,
                   ),
                 ),
                 calendarStyle: CalendarStyle(
@@ -99,18 +99,20 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                   ),
                   defaultTextStyle: const TextStyle(
                     fontSize: 20,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                   weekendTextStyle: const TextStyle(
                     fontSize: 20,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
-                  todayDecoration: const ShapeDecoration(
-                    color: Color.fromARGB(71, 0, 169, 226),
-                    shape: RoundedRectangleBorder(),
+                  todayDecoration: ShapeDecoration(
+                    color: const Color.fromARGB(70, 2, 131, 101),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                   selectedDecoration: ShapeDecoration(
-                    color: const Color(0xeb00a9e2),
+                    color: Colors.teal,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
