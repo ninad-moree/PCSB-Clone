@@ -28,15 +28,6 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     super.dispose();
   }
 
-  // void _showAddEventBottomSheet() {
-  //   showModalBottomSheet(
-  //     context: context,
-  //     builder: (context) {
-  //       return const AddEventBottomSheet();
-  //     },
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CalendarBloc, CalendarState>(
@@ -54,7 +45,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 daysOfWeekHeight: 50,
                 eventLoader: (date) => state.events[date] ?? [],
                 calendarBuilders: CalendarBuilders(
-                  // Use EventMarkerBuilder to show dots on days with events
+                  // dots under days to indicate events
                   markerBuilder: (context, date, events) {
                     if (events.isNotEmpty) {
                       return Positioned(

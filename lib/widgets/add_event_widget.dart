@@ -70,11 +70,9 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    // Add your event creation logic here
                     final eventTitle = _eventTitleController.text;
                     final eventDescription = _eventDescriptionController.text;
                     if (eventTitle.isNotEmpty && eventDescription.isNotEmpty) {
-                      // Dispatch your event to the BLoC
                       final selectedDate =
                           BlocProvider.of<CalendarBloc>(context)
                               .state
@@ -83,8 +81,6 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
                         AddEventEvent(
                             selectedDate, eventTitle, eventDescription),
                       );
-
-                      // Close the bottom sheet
                       Navigator.pop(context);
                     }
                   },

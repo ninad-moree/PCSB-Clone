@@ -51,7 +51,6 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             onPressed: () {
-              // Show the bottom sheet
               _showAddEventBottomSheet();
             },
             icon: const Icon(Icons.add),
