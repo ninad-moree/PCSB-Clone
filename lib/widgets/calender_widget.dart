@@ -28,6 +28,15 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     super.dispose();
   }
 
+  // void _showAddEventBottomSheet() {
+  //   showModalBottomSheet(
+  //     context: context,
+  //     builder: (context) {
+  //       return const AddEventBottomSheet();
+  //     },
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CalendarBloc, CalendarState>(
@@ -124,46 +133,6 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                       .add(SelectDateEvent(selectedDate));
                 },
               ),
-              const SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    TextFormField(
-                      decoration:
-                          const InputDecoration(labelText: 'Event Title'),
-                      controller: _eventTitleController,
-                      focusNode: _eventTitleFocusNode,
-                    ),
-                    TextFormField(
-                      decoration:
-                          const InputDecoration(labelText: 'Event Description'),
-                      controller: _eventDescrpController,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        if (_eventTitleController.text.isNotEmpty &&
-                            _eventDescrpController.text.isNotEmpty) {
-                          final seletedDate = state.selectedDate;
-                          final eventTitle = _eventTitleController.text;
-                          final eventDescription = _eventDescrpController.text;
-                          final event = AddEventEvent(
-                            seletedDate,
-                            eventTitle,
-                            eventDescription,
-                          );
-                          BlocProvider.of<CalendarBloc>(context).add(event);
-
-                          _eventTitleController.clear();
-                          _eventDescrpController.clear();
-                          _eventTitleFocusNode.requestFocus();
-                        }
-                      },
-                      child: const Text('Add Event'),
-                    ),
-                  ],
-                ),
-              ),
             ],
           ),
         );
@@ -171,22 +140,3 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     );
   }
 }
-
-
-// ElevatedButton(
-//   onPressed: () {
-//     if (_eventTitle.isNotEmpty &&
-//         _eventDescription.isNotEmpty) {
-//       final selectedDate = state.selectedDate;
-//       BlocProvider.of<CalendarBloc>(context).add(
-//         AddEventEvent(
-//             selectedDate, _eventTitle, _eventDescription),
-//       );
-//       setState(() {
-//         _eventTitle = '';
-//         _eventDescription = '';
-//       });
-//     }
-//   },
-//   child: const Text('Add Event'),
-// ),
