@@ -14,7 +14,7 @@ class CalendarWidget extends StatefulWidget {
 class _CalendarWidgetState extends State<CalendarWidget> {
   final CalendarFormat _calendarFormat = CalendarFormat.month;
 
-  final DateTime _focusedDay = DateTime.now();
+  DateTime _focusedDay = DateTime.now();
 
   final TextEditingController _eventTitleController = TextEditingController();
   final TextEditingController _eventDescrpController = TextEditingController();
@@ -37,6 +37,11 @@ class _CalendarWidgetState extends State<CalendarWidget> {
             children: [
               TableCalendar(
                 focusedDay: _focusedDay,
+                onPageChanged: (focusedDay) {
+                  setState(() {
+                    _focusedDay = focusedDay;
+                  });
+                },
                 firstDay: DateTime(2020),
                 lastDay: DateTime(2025),
                 calendarFormat: _calendarFormat,
@@ -84,11 +89,11 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                   //mon-tue-...
                   weekdayStyle: TextStyle(
                     fontSize: 20,
-                    color: Colors.tealAccent,
+                    color: Colors.teal,
                   ),
                   weekendStyle: TextStyle(
                     fontSize: 20,
-                    color: Colors.tealAccent,
+                    color: Colors.teal,
                   ),
                 ),
                 calendarStyle: CalendarStyle(

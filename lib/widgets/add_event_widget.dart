@@ -27,9 +27,6 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
     return BlocProvider<CalendarBloc>(
       create: (context) => CalendarBloc(),
       child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-        ),
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
@@ -61,11 +58,6 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
                       color: Colors.teal,
                     ),
                   ),
-                  // border: OutlineInputBorder(
-                  //   borderSide: BorderSide(
-                  //     color: Colors.teal,
-                  //   ),
-                  // ),
                 ),
               ),
             ),
@@ -90,7 +82,6 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
                     color: Colors.teal,
                   ),
                 ),
-                // border: OutlineInputBorder(),
               ),
             ),
             Row(
@@ -127,7 +118,7 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
                   child: const Text('Add Event'),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

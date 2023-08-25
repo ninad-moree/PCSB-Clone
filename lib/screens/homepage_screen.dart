@@ -15,15 +15,24 @@ class _HomePageState extends State<HomePage> {
   void _showAddEventBottomSheet() {
     showModalBottomSheet(
       context: context,
-      builder: (context) {
-        return const AddEventBottomSheet();
-      },
+      isScrollControlled: true,
+      builder: (context) => SingleChildScrollView(
+        child: Container(
+          padding:
+              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+          child: const AddEventBottomSheet(),
+        ),
+      ),
+      // builder: (context) {
+      //   return const AddEventBottomSheet();
+      // },
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Calendar Events'),
         actions: [
