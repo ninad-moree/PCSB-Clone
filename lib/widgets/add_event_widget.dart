@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tp2/constants/app_color.dart';
 
 import '../bloc/bloc/calendar_bloc.dart';
 
@@ -27,6 +28,18 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
     return BlocProvider<CalendarBloc>(
       create: (context) => CalendarBloc(),
       child: Container(
+        color: const Color.fromARGB(255, 9, 5, 41),
+        // foregroundDecoration: BoxDecoration(
+
+        //   gradient: LinearGradient(
+        //     begin: Alignment.topCenter,
+        //     end: Alignment.bottomCenter,
+        //     colors: [
+        //       AppColor.royalBlue.withOpacity(0.25),
+        //       AppColor.royalBlue.withOpacity(0.25),
+        //     ],
+        //   ),
+        // ),
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
@@ -50,12 +63,12 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.teal,
+                      color: AppColor.royalBlue,
                     ),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.teal,
+                      color: AppColor.royalBlue,
                     ),
                   ),
                 ),
@@ -74,12 +87,12 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.teal,
+                    color: AppColor.royalBlue,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.teal,
+                    color: AppColor.royalBlue,
                   ),
                 ),
               ),
@@ -92,13 +105,13 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
                   child: const Text(
                     'Cancel',
                     style: TextStyle(
-                      color: Colors.teal,
+                      color: AppColor.royalBlue,
                     ),
                   ),
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.teal,
+                    backgroundColor: AppColor.royalBlue,
                   ),
                   onPressed: () {
                     final eventTitle = _eventTitleController.text;

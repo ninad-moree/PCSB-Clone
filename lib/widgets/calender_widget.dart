@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:tp2/constants/app_color.dart';
 
 import '../bloc/bloc/calendar_bloc.dart';
 
@@ -60,7 +61,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                           height: 6,
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.yellow,
+                            color: AppColor.violet,
                           ),
                         ),
                       );
@@ -89,11 +90,11 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                   //mon-tue-...
                   weekdayStyle: TextStyle(
                     fontSize: 20,
-                    color: Colors.teal,
+                    color: Colors.white,
                   ),
                   weekendStyle: TextStyle(
                     fontSize: 20,
-                    color: Colors.teal,
+                    color: Colors.white,
                   ),
                 ),
                 calendarStyle: CalendarStyle(
@@ -111,13 +112,13 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                     color: Colors.white,
                   ),
                   todayDecoration: ShapeDecoration(
-                    color: const Color.fromARGB(70, 2, 131, 101),
+                    color: AppColor.royalBlue.withOpacity(0.5),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                   selectedDecoration: ShapeDecoration(
-                    color: Colors.teal,
+                    color: AppColor.royalBlue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),

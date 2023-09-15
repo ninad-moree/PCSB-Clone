@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tp2/constants/app_color.dart';
 
 import '../bloc/bloc/calendar_bloc.dart';
 
@@ -17,21 +18,31 @@ class EventListWidget extends StatelessWidget {
             itemBuilder: (context, index) {
               final event = selectedEvents[index];
               return Card(
-                child: ListTile(
-                  title: Text(
-                    event.title,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                child: Container(
+                  foregroundDecoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        AppColor.royalBlue.withOpacity(0.25),
+                        AppColor.royalBlue,
+                      ],
                     ),
                   ),
-                  contentPadding: const EdgeInsets.all(10),
-                  minVerticalPadding: 8,
-                  subtitle: Text(
-                    event.description,
-                    style: const TextStyle(
-                      color: Colors.white,
+                  child: ListTile(
+                    title: Text(
+                      event.title,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    contentPadding: const EdgeInsets.all(10),
+                    minVerticalPadding: 8,
+                    subtitle: Text(
+                      event.description,
+                      style: const TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
