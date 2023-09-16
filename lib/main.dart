@@ -5,6 +5,7 @@ import 'package:tp2/constants/app_color.dart';
 
 import 'screens/homepage_screen.dart';
 
+// this is start of your application
 void main() {
   runApp(
     BlocProvider<CalendarBloc>(
