@@ -29,17 +29,6 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
       create: (context) => CalendarBloc(),
       child: Container(
         color: const Color.fromARGB(255, 9, 5, 41),
-        // foregroundDecoration: BoxDecoration(
-
-        //   gradient: LinearGradient(
-        //     begin: Alignment.topCenter,
-        //     end: Alignment.bottomCenter,
-        //     colors: [
-        //       AppColor.royalBlue.withOpacity(0.25),
-        //       AppColor.royalBlue.withOpacity(0.25),
-        //     ],
-        //   ),
-        // ),
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
