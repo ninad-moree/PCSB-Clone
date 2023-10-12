@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tp2/features/events/widgets/event_backdrop_widget.dart';
 import 'package:tp2/features/events/widgets/event_carousel_widget.dart';
 
 import '../../../data/events_data.dart';
@@ -18,18 +19,24 @@ class _EventScreenState extends State<EventScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.black,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(height: 20),
-            AppBar(),
-            SizedBox(height: 40),
-            EventCarousel(defaultIndex: 1),
-          ],
-        ),
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          EventBackdrop(eventData: eventData, currentIndex: currentEventIndex),
+          const SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(height: 30),
+                AppBar(),
+                SizedBox(height: 40),
+                EventCarousel(defaultIndex: 1),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -15,25 +15,21 @@ class EventBackdrop extends StatelessWidget {
   Widget build(BuildContext context) {
     final AssetImage assetImage = eventData[currentIndex]['poster'];
 
-    return FractionallySizedBox(
-      alignment: Alignment.topCenter,
-      heightFactor: 0.4,
+    return SizedBox(
       child: ClipRRect(
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(40)),
         child: Stack(
           children: [
-            FractionallySizedBox(
-              heightFactor: 1,
-              widthFactor: 1,
-              child: Image(
-                image: assetImage,
-              ),
+            Image(
+              image: assetImage,
+              fit: BoxFit.cover,
+              height: 480,
             ),
             BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
               child: Container(
-                width: 100,
-                height: 400,
+                width: 400,
+                height: 800,
                 color: Colors.transparent,
               ),
             ),
