@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tp2/constants/app_color.dart';
+// import 'package:tp2/constants/app_color.dart';
+import 'package:tp2/features/events/screens/event_screen.dart';
 import 'features/calendar/bloc/calendar/calendar_bloc.dart';
-import 'features/calendar/screens/calendar_home_screen.dart';
 
 void main() {
   runApp(
@@ -18,14 +18,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: AppColor.royalBlue.withOpacity(0.25),
-          appBarTheme: AppBarTheme(
-            backgroundColor: AppColor.royalBlue.withOpacity(0.25),
-          )),
-      home: const HomePage(),
+      home: EventScreen(),
     );
   }
 }
