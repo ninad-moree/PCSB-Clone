@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tp2/bloc/bloc/calendar_bloc.dart';
 import 'package:tp2/constants/app_color.dart';
-
-import 'screens/homepage_screen.dart';
+import 'features/calendar/bloc/calendar/calendar_bloc.dart';
+import 'features/calendar/screens/calendar_home_screen.dart';
 
 void main() {
   runApp(

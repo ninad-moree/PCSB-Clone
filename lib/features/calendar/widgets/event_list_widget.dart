@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tp2/constants/app_color.dart';
-
-import '../bloc/bloc/calendar_bloc.dart';
+import '../bloc/calendar/calendar_bloc.dart';
 
 class EventListWidget extends StatelessWidget {
   const EventListWidget({super.key});
