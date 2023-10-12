@@ -25,14 +25,43 @@ class _EventScreenState extends State<EventScreen> {
         fit: StackFit.expand,
         children: [
           EventBackdrop(eventData: eventData, currentIndex: currentEventIndex),
-          const SingleChildScrollView(
+          SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 30),
-                AppBar(),
-                SizedBox(height: 40),
-                EventCarousel(defaultIndex: 1),
+                const SizedBox(height: 30),
+                const AppBarWidget(),
+                const SizedBox(height: 40),
+                EventCarousel(
+                  defaultIndex: 1,
+                  onIndexChanged: (index) {
+                    setState(() {
+                      currentEventIndex = index; // Update the currentIndex
+                    });
+                  },
+                ),
+                const SizedBox(height: 20),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    eventData[currentEventIndex]['eventName'],
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    eventData[currentEventIndex]['description'],
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -42,8 +71,8 @@ class _EventScreenState extends State<EventScreen> {
   }
 }
 
-class AppBar extends StatelessWidget {
-  const AppBar({
+class AppBarWidget extends StatelessWidget {
+  const AppBarWidget({
     super.key,
   });
 

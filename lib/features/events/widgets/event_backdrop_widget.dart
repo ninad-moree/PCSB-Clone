@@ -23,7 +23,7 @@ class EventBackdrop extends StatelessWidget {
             Image(
               image: assetImage,
               fit: BoxFit.cover,
-              height: 480,
+              height: 440,
             ),
             BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),

@@ -5,10 +5,12 @@ import 'animated_event_card_widget.dart';
 
 class EventCarousel extends StatefulWidget {
   final int defaultIndex;
+  final ValueChanged<int> onIndexChanged;
 
   const EventCarousel({
     Key? key,
     required this.defaultIndex,
+    required this.onIndexChanged,
   }) : super(key: key);
 
   @override
@@ -25,6 +27,7 @@ class _EventCarouselState extends State<EventCarousel> {
       keepPage: false,
       viewportFraction: 0.7,
     );
+    _pageController = PageController(initialPage: widget.defaultIndex);
   }
 
   @override
@@ -36,6 +39,7 @@ class _EventCarouselState extends State<EventCarousel> {
       child: PageView.builder(
         itemCount: EventData.eventData.length,
         controller: _pageController, // Use the _pageController here
+        onPageChanged: widget.onIndexChanged,
         itemBuilder: (context, index) {
           return AnimatedEventCard(
             pageController: _pageController, // Pass _pageController

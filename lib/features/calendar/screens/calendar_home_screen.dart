@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:tp2/constants/app_color.dart';
 
 import '../widgets/add_event_widget.dart';
 import '../widgets/calender_widget.dart';
 import '../widgets/event_list_widget.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class CalendarScreen extends StatefulWidget {
+  const CalendarScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<CalendarScreen> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<CalendarScreen> {
   void _showAddEventBottomSheet() {
     showModalBottomSheet(
       context: context,
@@ -35,6 +36,7 @@ class _HomePageState extends State<HomePage> {
       // resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Calendar Events'),
+        backgroundColor: AppColor.vulcan,
         actions: [
           IconButton(
             onPressed: () {
@@ -44,6 +46,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+      backgroundColor: AppColor.vulcan,
       body: const Column(
         children: [
           CalendarWidget(),

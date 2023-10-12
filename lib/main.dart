@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:tp2/constants/app_color.dart';
-import 'package:tp2/features/events/screens/event_screen.dart';
+import 'package:tp2/features/home/screens/home_screen.dart';
 import 'features/calendar/bloc/calendar/calendar_bloc.dart';
 
 void main() {
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: EventScreen(),
+      home: HomeScreen(),
     );
   }
 }

@@ -18,14 +18,7 @@ class EventListWidget extends StatelessWidget {
               final event = selectedEvents[index];
               return Card(
                 child: Container(
-                  foregroundDecoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        AppColor.royalBlue.withOpacity(0.25),
-                        AppColor.royalBlue,
-                      ],
-                    ),
-                  ),
+                  color: AppColor.royalBlue,
                   child: ListTile(
                     title: Text(
                       event.title,

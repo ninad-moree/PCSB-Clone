@@ -35,6 +35,7 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
               'Add Event',
               style: TextStyle(
                 fontSize: 24,
+                color: Colors.white,
               ),
             ),
             const SizedBox(height: 10),
@@ -44,6 +45,7 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
                 autofocus: true,
                 controller: _eventTitleController,
                 cursorColor: Colors.white,
+                style: const TextStyle(color: Colors.white),
                 decoration: const InputDecoration(
                   labelText: 'Event Title',
                   labelStyle: TextStyle(
@@ -68,6 +70,7 @@ class _AddEventBottomSheetState extends State<AddEventBottomSheet> {
               minLines: 3,
               maxLines: 5,
               cursorColor: Colors.white,
+              style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 labelText: 'Event Description',
                 labelStyle: TextStyle(
