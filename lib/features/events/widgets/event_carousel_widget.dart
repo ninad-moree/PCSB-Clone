@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tp2/data/events_data.dart';
+import 'package:tp2/features/sub_events/screens/subevents.dart';
 
 import 'animated_event_card_widget.dart';
 
@@ -30,6 +31,15 @@ class _EventCarouselState extends State<EventCarousel> {
     _pageController = PageController(initialPage: widget.defaultIndex);
   }
 
+  void _navigateToDetailScreen(int index) {
+    final eventName = EventData.eventData[index]['eventName'];
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => SubEvents(eventName: eventName),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,9 +51,14 @@ class _EventCarouselState extends State<EventCarousel> {
         controller: _pageController, // Use the _pageController here
         onPageChanged: widget.onIndexChanged,
         itemBuilder: (context, index) {
-          return AnimatedEventCard(
-            pageController: _pageController, // Pass _pageController
-            index: index,
+          return GestureDetector(
+            onTap: () {
+              _navigateToDetailScreen(index);
+            },
+            child: AnimatedEventCard(
+              pageController: _pageController, // Pass _pageController
+              index: index,
+            ),
           );
         },
         pageSnapping: true,

@@ -28,13 +28,13 @@ class _EventScreenState extends State<EventScreen> {
           SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 30),
                 const AppBarWidget(),
                 const SizedBox(height: 40),
                 EventCarousel(
-                  defaultIndex: 1,
+                  defaultIndex: 0,
                   onIndexChanged: (index) {
                     setState(() {
                       currentEventIndex = index; // Update the currentIndex
@@ -52,16 +52,16 @@ class _EventScreenState extends State<EventScreen> {
                     ),
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Text(
-                    eventData[currentEventIndex]['description'],
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
+                // Container(
+                //   padding: const EdgeInsets.all(10),
+                //   child: Text(
+                //     eventData[currentEventIndex]['description'],
+                //     style: const TextStyle(
+                //       color: Colors.white,
+                //       fontSize: 20,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -82,7 +82,7 @@ class AppBarWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: () => Navigator.pop(context),
           icon: const Icon(
             Icons.arrow_back,
             color: Colors.white,
